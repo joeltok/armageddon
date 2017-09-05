@@ -12,6 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "prompt": "^1.0.0",
+    "recursive-readdir": "^2.2.1",
     "yesno": "0.0.1"
   }
 }
