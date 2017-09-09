@@ -11,6 +11,7 @@
   "author": "jttctc@gmail.com",
   "license": "MIT",
   "dependencies": {
+    "file-extension": "^3.1.2",
     "prompt": "^1.0.0",
     "recursive-readdir": "^2.2.1",
     "yesno": "0.0.1"

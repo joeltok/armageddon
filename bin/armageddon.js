@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-//var asteroid = require('./../lib/asteroid')
+var asteroid = require('./../lib/asteroid')
 var prompt = require('prompt')
 var yesno = require('yesno')
 var path = require('path')
@@ -41,7 +41,7 @@ new Promise((resolve, reject) => {
 })
 .then(() => {
 	console.log('ARMAGEDDON!!')
+	asteroid.shower()
+	console.log('Did you survive?')
 })
 
-//asteroid.shower()
-//console.log('It is done.')
