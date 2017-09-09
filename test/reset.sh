@@ -1,11 +1,41 @@
 rm blunt.js
 echo " 
-var a = function() {
+var bluntA = function() {
 }
 
-var b = (water) => {
+var bluntB = (water) => {
 	var x = 4
 }
 
-var c = water => console.log(water)
-" >> blunt.js 
+var bluntC = ( fighter, pen  , hurrah)=>{}
+
+var bluntD = water => console.log(water)
+" >> blunt.js
+
+rm sharp.js
+echo "
+var sharpA = function( hurrah) {
+	console.log('eat')
+	require('fs')
+
+}
+" >> sharp.js
+
+rm -rf deeper
+mkdir deeper
+echo "
+function() {
+	
+
+
+	return 1+1
+}
+
+module.exports = (gant) => {
+  if (true) {
+		return 'yay'
+	} else {
+		return 'nay'
+	}
+}
+" >> deeper/down.js
