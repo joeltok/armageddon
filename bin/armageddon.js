@@ -41,7 +41,8 @@ new Promise((resolve, reject) => {
 })
 .then(() => {
 	console.log('ARMAGEDDON!!')
-	asteroid.shower()
+	return asteroid.shower()
+})
+.then(() => {
 	console.log('Did you survive?')
 })
-
