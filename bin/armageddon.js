@@ -6,17 +6,18 @@ var yesno = require('yesno')
 var path = require('path')
 
 new Promise((resolve, reject) => {
-	yesno.ask('Before we continue, please make sure that you have at least backed up your code base, or saved all your current changes into some kind of version control system. If you have not, please enter "No" to do so. If you have, please enter "Yes".', true, function(ok) {
+	yesno.ask('Are you sure you want to proceed? Use of this module could do irreversible damage to your code base if you are not careful. (Y/N)', true, function(ok) {
 		if (ok) {
 			resolve(true)
 		} else {
+			console.log('Please do so first being continuing.')
 			process.exit()
 		}
 	})
 })
 .then(() => {
 	return new Promise((resolve, reject) => {
-		yesno.ask('Are you sure you want to proceed? Use of this module could do irreversible damage to your code base if you are not careful.', true, function(ok) {
+		yesno.ask('Have you backed up your code base, or saved all your current changes into some kind of version control system? (Y/N)', true, function(ok) {
 			if (ok) {
 				resolve(true)
 			} else {
