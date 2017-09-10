@@ -1,6 +1,6 @@
 # Armageddon
 
-## Introduction and Disclaimer
+## Introduction
 
 Inject a console.log marker into every single multi-line function of your JavaScript application, so that you can trace the flow of your program. 
 
@@ -34,8 +34,8 @@ git checkout -b boom
 Run the armageddon module.
 
 This module will:
-(1) Trigger a recursive search for JavaScript files within the current working directory, by using the .js suffix of each file. 
-(2) Inject a console.log('ARMA[marker]') line into every single multi-line function in each of these files.
+1. Trigger a recursive search for JavaScript files within the current working directory, by using the .js suffix of each file. 
+2. Inject a console.log('ARMA[marker]') line into every single multi-line function in each of these files.
 
 When the files are then run using node, ARMA[marker]s will then be printed into the logs as you move through the code base. This will allow you to trace the flow through your code base, something especially useful for code bases that are extremely convoluted.
 
