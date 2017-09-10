@@ -1,6 +1,6 @@
 {
   "name": "armageddon",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "If you want to know what the heck is going on in your ridiculously bloated code base, this module is for you. However, use at your own risk.",
   "bin": {
     "armegeddon": "bin/armegeddon"
