@@ -18,7 +18,18 @@ npm install -g armageddon
 
 ## Usage
 
-### Using the module
+### Overview
+```
+cd path/to/directory/of/js/files
+git stash
+git checkout -b boom
+armageddon
+git stash save --keep-index
+git stash drop
+git branch -D boom
+```
+
+### Breakdown of commands
 
 Start at the directory of js files you want to trace flow through.
 ```
