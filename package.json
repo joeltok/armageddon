@@ -3,7 +3,7 @@
   "version": "1.0.4",
   "description": "If you want to know what the heck is going on in your ridiculously bloated code base, this module is for you. However, use at your own risk.",
   "bin": {
-    "armegeddon": "bin/armageddon.js"
+    "armageddon": "bin/armageddon.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
