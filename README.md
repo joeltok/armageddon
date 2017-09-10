@@ -2,13 +2,11 @@
 
 ## Introduction and Disclaimer
 
-This module is for people who want to know what the heck is going on in their ridiculously bloated code base. 
+Inject a console.log marker into every single multi-line function of your JavaScript application, so that you can trace the flow of your program. 
 
-When used, this module will trigger a recursive search for JavaScript files within the current working directory, by using the .js suffix of each file. The module will then inject a console.log('ARMA[marker]') line into every single multi-line function in each of these files.
+Especially useful for large, bloated and convoluted code bases.
 
-When the files are then run using node, ARMA[marker]s will then be printed into the logs as you move through the code base. This will allow you to trace the flow through your code base, something especially useful for code bases that are extremely convoluted.
-
-However, because this module changes your code base directly (meaning actual files have their contents changed), be very very careful when using this module. The best thing to do before using this module would be to backup your code base and all its recent changes using some kind of version control system.
+WARNING: This module changes your code base directly (meaning actual files have their contents changed), be very very careful when using this module. The best thing to do before running this module would be to backup your code base and all its recent changes using some kind of version control system.
 
 Note that only files with a .js suffix are changed.
 
@@ -26,22 +24,31 @@ Start at the directory of js files you want to trace flow through.
 ```
 cd path/to/directory/of/js/files
 ```
+
 Backup current code base. This uses git, but use whatever version control system you want.
 ```
 git stash
 git checkout -b boom
 ```
+
 Run the armageddon module.
+
+This module will:
+(1) Trigger a recursive search for JavaScript files within the current working directory, by using the .js suffix of each file. 
+(2) Inject a console.log('ARMA[marker]') line into every single multi-line function in each of these files.
+
+When the files are then run using node, ARMA[marker]s will then be printed into the logs as you move through the code base. This will allow you to trace the flow through your code base, something especially useful for code bases that are extremely convoluted.
+
 ```
 armageddon
 ```
+
 Play with your code base until you understand it. Then revert back to the original code base without the vandalism.
 ```
 git stash save --keep-index
 git stash drop
 git branch -D boom
 ```
-
 ### Result of using the module
 
 Example of what happens to the code base. 
