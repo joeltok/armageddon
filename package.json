@@ -15,5 +15,33 @@
     "prompt": "^1.0.0",
     "recursive-readdir": "^2.2.1",
     "yesno": "0.0.1"
-  }
+  },
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/joeltok/armageddon.git"
+	},
+	"keywords": [
+		"debug",
+		"messy codebase",
+		"convoluted code",
+		"debugging",
+		"debugger",
+		"mark functions",
+		"mark all functions",
+		"flow",
+		"see code flow",
+		"understand my code",
+		"armageddon",
+		"i give up",
+		"save me",
+		"what is going on",
+		"what on eart is going on",
+		"last resort"
+	],
+	"author": "joeltok jttctc@gmail.com",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/joeltok/armageddon/issues"
+	},
+	"homepage": "https://github.com/joeltok/armageddon#readme"
 }
