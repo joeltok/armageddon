@@ -1,6 +1,6 @@
 {
   "name": "armageddon",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "If you want to know what the heck is going on in your ridiculously bloated code base, this module is for you. However, use at your own risk.",
   "bin": {
     "armegeddon": "bin/armegeddon"
@@ -8,7 +8,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "jttctc@gmail.com",
+  "author": "joeltok jtok.dev@gmail.com",
   "license": "MIT",
   "dependencies": {
     "file-extension": "^3.1.2",
@@ -16,32 +16,30 @@
     "recursive-readdir": "^2.2.1",
     "yesno": "0.0.1"
   },
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/joeltok/armageddon.git"
-	},
-	"keywords": [
-		"debug",
-		"messy codebase",
-		"convoluted code",
-		"debugging",
-		"debugger",
-		"mark functions",
-		"mark all functions",
-		"flow",
-		"see code flow",
-		"understand my code",
-		"armageddon",
-		"i give up",
-		"save me",
-		"what is going on",
-		"what on eart is going on",
-		"last resort"
-	],
-	"author": "joeltok jtok.dev@gmail.com",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/joeltok/armageddon/issues"
-	},
-	"homepage": "https://github.com/joeltok/armageddon#readme"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joeltok/armageddon.git"
+  },
+  "keywords": [
+    "debug",
+    "messy codebase",
+    "convoluted code",
+    "debugging",
+    "debugger",
+    "mark functions",
+    "mark all functions",
+    "flow",
+    "see code flow",
+    "understand my code",
+    "armageddon",
+    "i give up",
+    "save me",
+    "what is going on",
+    "what on eart is going on",
+    "last resort"
+  ],
+  "bugs": {
+    "url": "https://github.com/joeltok/armageddon/issues"
+  },
+  "homepage": "https://github.com/joeltok/armageddon#readme"
 }
