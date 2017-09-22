@@ -17,6 +17,9 @@ var bluntD = water => console.log(water)
 " > blunt.js
 
 echo "
+// var h = function() {
+//}
+
 var sharpA = function( hurrah) {
 	console.log('eat')
 	require('fs')
