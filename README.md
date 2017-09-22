@@ -82,10 +82,7 @@ New:
 ```javascript
 // example.js
 
-function x(arg1, arg2) {
-	
-	console.log('ARMA1');
-
+function x(arg1, arg2) {console.log('ARMA1');
 	var x = 2
 	return x + x
 }
