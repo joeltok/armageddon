@@ -1,0 +1,5 @@
+new machine: 
+npm adduser --userconfig .npmrc
+
+existing machine without local permisions:
+npm publish --userconfig .npmrc

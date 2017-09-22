@@ -2,3 +2,4 @@ node_modules/
 blunt.js
 deeper/
 sharp.js
+.npmrc
