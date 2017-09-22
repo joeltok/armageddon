@@ -1,13 +1,13 @@
 {
   "name": "armageddon",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "If you want to know what the heck is going on in your ridiculously bloated code base, this module is for you. However, use at your own risk.",
   "bin": {
     "armageddon": "bin/armageddon.js"
   },
   "scripts": {
     "test": "cd test/; NODE_ENV=test node ../bin/armageddon.js",
-		"reset-test": "cd test/; ./reset.sh"
+    "reset-test": "cd test/; ./reset.sh"
   },
   "author": "joeltok jtok.dev@gmail.com",
   "license": "MIT",
