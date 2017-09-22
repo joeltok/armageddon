@@ -1,4 +1,8 @@
-rm blunt.js
+echo "
+ignore
+iamnothere.js
+" > .gitignore-standin
+
 echo " 
 var bluntA = function() {
 }
@@ -10,16 +14,15 @@ var bluntB = (water) => {
 var bluntC = ( fighter, pen  , hurrah)=>{}
 
 var bluntD = water => console.log(water)
-" >> blunt.js
+" > blunt.js
 
-rm sharp.js
 echo "
 var sharpA = function( hurrah) {
 	console.log('eat')
 	require('fs')
 
 }
-" >> sharp.js
+" > sharp.js
 
 rm -rf deeper
 mkdir deeper
@@ -39,3 +42,10 @@ module.exports = (gant) => {
 	}
 }
 " >> deeper/down.js
+
+rm -rf ignore
+mkdir ignore
+touch ignore/a.js
+touch ignore/b.py
+
+echo "console.log('l')" > iamnothere.js
