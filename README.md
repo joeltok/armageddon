@@ -101,14 +101,8 @@ function x(arg1, arg2) {
 ## Testing
 
 ```
-cd test
-node ../bin/armageddon
+npm run reset-test
+npm run test
 ```
 Check that all functions have console.log("ARMA[marker]") directly at the start of the function.
-
-To reset the test files:
-
-```
-./reset.sh
-```
 
