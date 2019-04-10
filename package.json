@@ -1,13 +1,13 @@
 {
   "name": "armageddon",
-  "version": "1.0.10",
+  "version": "2.0.0",
   "description": "If you want to know what the heck is going on in your ridiculously bloated code base, this module is for you. However, use at your own risk.",
   "bin": {
-    "armageddon": "bin/armageddon.js"
+    "armageddon": "bin/index.js"
   },
   "scripts": {
-    "test": "cd test/; NODE_ENV=test node ../bin/armageddon.js",
-    "reset-test": "cd test/; ./reset.sh",
+    "armageddon": "node bin/index.js",
+    "test": "mocha --recursive ./test/*.spec.js",
     "lint": "./node_modules/.bin/eslint lib/",
     "lint:fix": "./node_modules/.bin/eslint lib/ --fix"
   },
@@ -15,6 +15,7 @@
   "license": "MIT",
   "dependencies": {
     "file-extension": "^3.1.2",
+    "minimist": "^1.2.0",
     "prompt": "^1.0.0",
     "recursive-readdir": "^2.2.1",
     "yesno": "0.0.1"
@@ -46,8 +47,12 @@
   },
   "homepage": "https://github.com/joeltok/armageddon#readme",
   "devDependencies": {
+    "assert": "^1.4.1",
+    "dir-compare": "^1.7.2",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.16.0"
+    "eslint-plugin-import": "^2.16.0",
+    "ncp": "^2.0.0",
+    "rimraf": "^2.6.3"
   }
 }
