@@ -18,18 +18,13 @@ npm install -g armageddon
 
 ## Usage
 
-### Overview
+### Quick Start
 
-Set up.
 ```
 cd path/to/directory/of/js/files
 git stash
 git checkout -b boom
-armageddon
-```
-
-Inspect your code. Once done, remove the changes made by this module.
-```
+armageddon path/to/folder/
 git stash save --keep-index
 git stash drop
 git branch -D boom
@@ -51,11 +46,11 @@ git checkout -b boom
 Run armageddon.
 
 ```
-armageddon
+armageddon path/to/folder/
 ```
 
 This will:
-1. Trigger a recursive search for JavaScript files within the current working directory, by using the .js suffix of each file.
+1. Trigger a recursive search for JavaScript files within the specified directory, by using the .js suffix of each file.
 2. Inject a console.log('ARMA[marker]') line into every single multi-line function in each of these files.
 
 When the files are then run using node, ARMA[marker]s will then be printed into the logs as you move through the code base. This will allow you to trace the flow through your code base, something especially useful for code bases that are extremely convoluted.
