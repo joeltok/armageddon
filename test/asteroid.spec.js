@@ -8,7 +8,7 @@ const asteroid = require('../lib/asteroid');
 
 ncp.limit = 16;
 
-describe('Test armageddon', () => {
+describe('lib/asteroid.js', () => {
   beforeEach((done) => {
     rimraf.sync(`${__dirname}/altered`)
     ncp(`${__dirname}/fixtures/before`, `${__dirname}/altered`, (err) => {
@@ -20,7 +20,12 @@ describe('Test armageddon', () => {
   })
 
   it ('# should successfully convert fixtures/before/ into fixtures/after/', async () => {
-    await asteroid.shower(`${__dirname}/altered`);
+    const pathsToIgnore = [
+      `${__dirname}/altered/ignore`,
+      `${__dirname}/altered/iamnothere.js`,
+    ]
+
+    await asteroid.shower(`${__dirname}/altered`, pathsToIgnore);
     const result = dircompare.compareSync(`${__dirname}/altered`, `${__dirname}/fixtures/after`, {compareSize: true})
 
     if (result.distinct !== 0) {
