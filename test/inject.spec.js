@@ -4,11 +4,11 @@ const ncp = require('ncp').ncp;
 const execSync = require('child_process').execSync;
 const dircompare = require('dir-compare');
 
-const asteroid = require('../lib/asteroid');
+const inject = require('../lib/inject');
 
 ncp.limit = 16;
 
-describe('lib/asteroid.js', () => {
+describe('lib/inject.js', () => {
   beforeEach((done) => {
     rimraf.sync(`${__dirname}/altered`)
     ncp(`${__dirname}/fixtures/before`, `${__dirname}/altered`, (err) => {
@@ -25,7 +25,7 @@ describe('lib/asteroid.js', () => {
       `${__dirname}/altered/iamnothere.js`,
     ]
 
-    await asteroid.shower(`${__dirname}/altered`, pathsToIgnore);
+    await inject(`${__dirname}/altered`, pathsToIgnore);
     const result = dircompare.compareSync(`${__dirname}/altered`, `${__dirname}/fixtures/after`, {compareSize: true})
 
     if (result.distinct !== 0) {

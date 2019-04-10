@@ -4,9 +4,9 @@ var fs = require('fs');
 var path = require('path');
 var minimist = require('minimist');
 
-var asteroid = require('./../lib/asteroid')
 var prompts = require('../lib/prompts')
 var ignore = require('../lib/ignore')
+var inject = require('../lib/inject')
 
 const args = minimist(process.argv.slice(2))
 
@@ -31,7 +31,7 @@ const armageddon = async () => {
   await prompts.pathsToIgnore(pathsFromGitIgnore)
   await prompts.finalConfirmation(targetPath)
 
-  asteroid.shower(targetPath, pathsFromGitIgnore)
+  inject(targetPath, pathsFromGitIgnore)
 }
 
 armageddon()
