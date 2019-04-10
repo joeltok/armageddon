@@ -6,7 +6,7 @@
     "armageddon": "bin/armageddon.js"
   },
   "scripts": {
-    "test": "mocha --recursive ./test/**/*.spec.js",
+    "test": "NODE_ENV=test mocha --recursive ./test/**/*.spec.js",
     "reset-test": "cd test/; ./reset.sh",
     "lint": "./node_modules/.bin/eslint lib/",
     "lint:fix": "./node_modules/.bin/eslint lib/ --fix"
