@@ -7,7 +7,9 @@
   },
   "scripts": {
     "test": "cd test/; NODE_ENV=test node ../bin/armageddon.js",
-    "reset-test": "cd test/; ./reset.sh"
+    "reset-test": "cd test/; ./reset.sh",
+    "lint": "./node_modules/.bin/eslint lib/",
+    "lint:fix": "./node_modules/.bin/eslint lib/ --fix"
   },
   "author": "joeltok jtok.dev@gmail.com",
   "license": "MIT",
@@ -42,5 +44,10 @@
   "bugs": {
     "url": "https://github.com/joeltok/armageddon/issues"
   },
-  "homepage": "https://github.com/joeltok/armageddon#readme"
+  "homepage": "https://github.com/joeltok/armageddon#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  }
 }
