@@ -7,7 +7,7 @@
   },
   "scripts": {
     "armageddon": "node bin/index.js",
-    "test": "NODE_ENV=test mocha --recursive ./test/*.spec.js",
+    "test": "mocha --recursive ./test/*.spec.js",
     "lint": "./node_modules/.bin/eslint lib/",
     "lint:fix": "./node_modules/.bin/eslint lib/ --fix"
   },
