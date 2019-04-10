@@ -6,6 +6,7 @@
     "armageddon": "bin/armageddon.js"
   },
   "scripts": {
+    "start": "node bin/armageddon",
     "test": "NODE_ENV=test mocha --recursive ./test/**/*.spec.js",
     "lint": "./node_modules/.bin/eslint lib/",
     "lint:fix": "./node_modules/.bin/eslint lib/ --fix"

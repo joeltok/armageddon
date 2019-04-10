@@ -36,7 +36,7 @@ new Promise((resolve, reject) => {
 				process.exit()
 			} else {
 				resolve(true)
-			}		
+			}
 		})
 	})
 })
