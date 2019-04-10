@@ -1,12 +1,12 @@
 {
   "name": "armageddon",
-  "version": "1.0.10",
+  "version": "2.0.0",
   "description": "If you want to know what the heck is going on in your ridiculously bloated code base, this module is for you. However, use at your own risk.",
   "bin": {
     "armageddon": "bin/armageddon.js"
   },
   "scripts": {
-    "start": "node bin/armageddon",
+    "armageddon": "node bin/armageddon",
     "test": "NODE_ENV=test mocha --recursive ./test/**/*.spec.js",
     "lint": "./node_modules/.bin/eslint lib/",
     "lint:fix": "./node_modules/.bin/eslint lib/ --fix"
