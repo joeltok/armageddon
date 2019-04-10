@@ -1,9 +1,3 @@
 node_modules/
 .npmrc
-
-test/blunt.js
-test/deeper/
-test/sharp.js
-test/iamnothere.js
-test/ignore
-test/.gitignore-standin
+test/altered/

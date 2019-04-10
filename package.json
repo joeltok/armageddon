@@ -6,7 +6,7 @@
     "armageddon": "bin/armageddon.js"
   },
   "scripts": {
-    "test": "cd test/; NODE_ENV=test node ../bin/armageddon.js",
+    "test": "mocha --recursive ./test/**/*.spec.js",
     "reset-test": "cd test/; ./reset.sh",
     "lint": "./node_modules/.bin/eslint lib/",
     "lint:fix": "./node_modules/.bin/eslint lib/ --fix"
@@ -46,8 +46,12 @@
   },
   "homepage": "https://github.com/joeltok/armageddon#readme",
   "devDependencies": {
+    "assert": "^1.4.1",
+    "dir-compare": "^1.7.2",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.16.0"
+    "eslint-plugin-import": "^2.16.0",
+    "ncp": "^2.0.0",
+    "rimraf": "^2.6.3"
   }
 }
