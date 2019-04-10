@@ -13,11 +13,11 @@ const args = minimist(process.argv.slice(2))
 const armageddon = async () => {
   const targetArg = args._[0];
   if (!targetArg) {
-    console.error('Default target path has been deprecated.')
-    console.error('Please specify a target file or directory.')
+    console.error('Default target directory has been deprecated.')
+    console.error('Please specify a target directory.')
     process.exit()
   } else if (!fs.existsSync(targetArg)) {
-    console.error(`Target path does not exist: ${targetArg}.`)
+    console.error(`Target directory does not exist: ${targetArg}.`)
     process.exit()
   }
   const targetPath = path.resolve(targetArg);
