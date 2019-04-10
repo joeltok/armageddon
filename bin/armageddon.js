@@ -39,11 +39,12 @@ new Promise((resolve, reject) => {
 })
 .then(() => {
 	return new Promise((resolve, reject) => {
-		console.log('Final confirmation. If you wish to proceed, please type in the name of your current working directory.')
+		console.log('Final confirmation. If you wish to proceed, please type in the name of your target file or folder.')
 		prompt.start()
 		prompt.get(['name'], function(err, result) {
-			if (path.basename(targetPath) != result.name) {
-				console.log('You did not enter the correct name for your current working directory')
+      const targetedName = path.basename(targetPath);
+			if (targetedFolder != result.name) {
+        console.log(`The name you entered was ${result.name}, but your targeted file or folder was ${targetedName}. Terminating.`)
 				process.exit()
 			} else {
 				resolve(true)
