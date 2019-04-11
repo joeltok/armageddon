@@ -1,10 +1,12 @@
-var bluntA = function() {console.log("ARMA4");
-}
+const bluntA = function () {
+  console.log('ARMA4');
+};
 
-var bluntB = (water) => {console.log("ARMA5");
-	var x = 4
-}
+const bluntB = (water) => {
+  console.log('ARMA5');
+  const x = 4;
+};
 
-var bluntC = ( fighter, pen  , hurrah)=>{console.log("ARMA6");}
+const bluntC = (fighter, pen, hurrah) => { console.log('ARMA6'); };
 
-var bluntD = water => console.log(water)
+const bluntD = water => console.log(water);

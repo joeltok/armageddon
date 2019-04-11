@@ -8,8 +8,8 @@
   "scripts": {
     "armageddon": "node bin/index.js",
     "test": "mocha --recursive ./test/*.spec.js",
-    "lint": "./node_modules/.bin/eslint lib/",
-    "lint:fix": "./node_modules/.bin/eslint lib/ --fix"
+    "lint": "./node_modules/.bin/eslint lib/ bin/",
+    "lint:fix": "./node_modules/.bin/eslint lib/ bin/ --fix"
   },
   "author": "joeltok jtok.dev@gmail.com",
   "license": "MIT",

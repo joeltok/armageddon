@@ -1,10 +1,10 @@
-var bluntA = function() {
-}
+const bluntA = function () {
+};
 
-var bluntB = (water) => {
-	var x = 4
-}
+const bluntB = (water) => {
+  const x = 4;
+};
 
-var bluntC = ( fighter, pen  , hurrah)=>{}
+const bluntC = (fighter, pen, hurrah) => {};
 
-var bluntD = water => console.log(water)
+const bluntD = water => console.log(water);
