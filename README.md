@@ -12,7 +12,7 @@ Note that only files with a .js suffix are changed.
 
 ## Installation
 
-```
+```sh
 npm install -g armageddon
 ```
 
@@ -20,11 +20,11 @@ npm install -g armageddon
 
 ### Quick Start
 
-```
+```sh
 cd path/to/directory/of/js/files
 git stash
 git checkout -b boom
-armageddon path/to/folder/
+armageddon ./
 git stash save --keep-index
 git stash drop
 git branch -D boom
@@ -33,30 +33,30 @@ git branch -D boom
 ### Breakdown of commands
 
 Start at the directory of js files you want to trace flow through.
-```
+```sh
 cd path/to/directory/of/js/files
 ```
 
 Backup current code base. This uses git, but use whatever version control system you want.
-```
+```sh
 git stash
 git checkout -b boom
 ```
 
 Run armageddon.
 
-```
-armageddon path/to/folder/
+```sh
+armageddon ./ # you may specify any relative path in place of "./"
 ```
 
 This will:
-1. Trigger a recursive search for JavaScript files within the specified directory, by using the .js suffix of each file.
+1. Trigger a recursive search for JavaScript files at the target location, by using the .js suffix of each file.
 2. Inject a console.log('ARMA[marker]') line into every single multi-line function in each of these files.
 
 When the files are then run using node, ARMA[marker]s will then be printed into the logs as you move through the code base. This will allow you to trace the flow through your code base, something especially useful for code bases that are extremely convoluted.
 
 After the problem has been identified, revert back to the original code base without the vandalism.
-```
+```sh
 git stash save --keep-index
 git stash drop
 git branch -D boom
@@ -98,8 +98,6 @@ function x(arg1, arg2) {console.log('ARMA1');
 
 ## Testing
 
-```
-npm run reset-test
+```sh
 npm run test
 ```
-Check that all functions have console.log("ARMA[marker]") directly at the start of the function.
