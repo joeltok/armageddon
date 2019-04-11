@@ -23,6 +23,7 @@ describe('lib/inject.js', () => {
     const pathsToIgnore = [
       `${__dirname}/altered/ignore`,
       `${__dirname}/altered/iamnothere.js`,
+      `${__dirname}/altered/.gitignore-standin`,
     ]
 
     await inject(`${__dirname}/altered`, pathsToIgnore);
