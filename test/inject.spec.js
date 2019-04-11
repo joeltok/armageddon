@@ -4,6 +4,7 @@ const fs = require('fs');
 const ncp = require('ncp').ncp;
 const execSync = require('child_process').execSync;
 const dircompare = require('dir-compare');
+const sinon = require('sinon');
 
 const inject = require('../lib/inject');
 
@@ -20,12 +21,24 @@ function ncpPromise(source, destination) {
 }
 
 describe('lib/inject.js', () => {
+  let exitStub;
+  let sandbox;
+
   before((done) => {
+    sandbox = sinon.sandbox.create();
+
     if (fs.existsSync(testCodeDir)) {
       rimraf.sync(testCodeDir)
     }
     fs.mkdirSync(testCodeDir)
     done()
+  })
+
+  beforeEach(() => {
+    sandbox.restore();
+
+    exitStub = sandbox.stub(process, 'exit')
+    exitStub.throws(new Error('exit process'))
   })
 
   it ('# should successfully recurse on folder', async () => {
@@ -85,7 +98,13 @@ describe('lib/inject.js', () => {
       destination,
     ]
 
-    await inject(destination, pathsToIgnore);
+    try {
+      await inject(destination, pathsToIgnore);
+      throw new Error('Supposed to exit');
+    } catch (err) {
+      assert(err.message === 'exit process');
+    }
+
     const result = dircompare.compareSync(destination, comparePath, {compareSize: true})
 
     if (result.distinct !== 0) {
