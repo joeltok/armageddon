@@ -8,8 +8,8 @@
   "scripts": {
     "armageddon": "node bin/index.js",
     "test": "mocha --recursive ./test/*.spec.js",
-    "lint": "./node_modules/.bin/eslint lib/",
-    "lint:fix": "./node_modules/.bin/eslint lib/ --fix"
+    "lint": "./node_modules/.bin/eslint lib/ bin/",
+    "lint:fix": "./node_modules/.bin/eslint lib/ bin/ --fix"
   },
   "author": "joeltok jtok.dev@gmail.com",
   "license": "MIT",
@@ -52,7 +52,9 @@
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0",
+    "mocha": "^6.1.2",
     "ncp": "^2.0.0",
-    "rimraf": "^2.6.3"
+    "rimraf": "^2.6.3",
+    "sinon": "^7.3.1"
   }
 }
