@@ -53,41 +53,47 @@ describe('lib/inject.js', () => {
     }
   })
 
+  it ('# should successfully target file', async () => {
+    const source      = `${__dirname}/fixtures/singleTarget/before.js`;
+    const comparePath = `${__dirname}/fixtures/singleTarget/after.js`;
+    const destination = `${testCodeDir}/singleTarget.js`;
 
+    await ncpPromise(source, destination)
 
+    const pathsToIgnore = []
 
+    await inject(destination, pathsToIgnore);
+    const result = dircompare.compareSync(destination, comparePath, {compareSize: true})
 
-  // it ('# should successfully target file', async () => {
-  //   const pathsToIgnore = []
-  //
-  //   await inject(`${__dirname}/altered`, pathsToIgnore);
-  //   const result = dircompare.compareSync(`${__dirname}/altered`, `${__dirname}/fixtures/after`, {compareSize: true})
-  //
-  //   if (result.distinct !== 0) {
-  //     let diffFilePaths = result.diffSet
-  //       .filter(diff => diff.state === 'distinct')
-  //       .map(diff => `${diff.path1}/${diff.name1} with\n${diff.path2}/${diff.name2}`)
-  //     diffFilePaths = diffFilePaths.join('\n\n')
-  //     throw new Error(`The following files are distinct:\n\n${diffFilePaths}`)
-  //   }
-  // })
-  //
-  // it ('# should not target file if it is part of .gitignore', async () => {
-  //   const pathsToIgnore = [
-  //     `${__dirname}/altered/ignore`,
-  //     `${__dirname}/altered/iamnothere.js`,
-  //     `${__dirname}/altered/.gitignore-standin`,
-  //   ]
-  //
-  //   await inject(`${__dirname}/altered`, pathsToIgnore);
-  //   const result = dircompare.compareSync(`${__dirname}/altered`, `${__dirname}/fixtures/after`, {compareSize: true})
-  //
-  //   if (result.distinct !== 0) {
-  //     let diffFilePaths = result.diffSet
-  //       .filter(diff => diff.state === 'distinct')
-  //       .map(diff => `${diff.path1}/${diff.name1} with\n${diff.path2}/${diff.name2}`)
-  //     diffFilePaths = diffFilePaths.join('\n\n')
-  //     throw new Error(`The following files are distinct:\n\n${diffFilePaths}`)
-  //   }
-  // })
+    if (result.distinct !== 0) {
+      let diffFilePaths = result.diffSet
+        .filter(diff => diff.state === 'distinct')
+        .map(diff => `${diff.path1}/${diff.name1} with\n${diff.path2}/${diff.name2}`)
+      diffFilePaths = diffFilePaths.join('\n\n')
+      throw new Error(`The following files are distinct:\n\n${diffFilePaths}`)
+    }
+  })
+
+  it ('# should not target file if it is part of .gitignore', async () => {
+    const source      = `${__dirname}/fixtures/singleTargetFail/before.js`;
+    const comparePath = `${__dirname}/fixtures/singleTargetFail/after.js`;
+    const destination = `${testCodeDir}/singleTargetFail.js`;
+
+    await ncpPromise(source, destination)
+
+    const pathsToIgnore = [
+      destination,
+    ]
+
+    await inject(destination, pathsToIgnore);
+    const result = dircompare.compareSync(destination, comparePath, {compareSize: true})
+
+    if (result.distinct !== 0) {
+      let diffFilePaths = result.diffSet
+        .filter(diff => diff.state === 'distinct')
+        .map(diff => `${diff.path1}/${diff.name1} with\n${diff.path2}/${diff.name2}`)
+      diffFilePaths = diffFilePaths.join('\n\n')
+      throw new Error(`The following files are distinct:\n\n${diffFilePaths}`)
+    }
+  })
 })
